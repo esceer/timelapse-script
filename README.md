@@ -21,4 +21,16 @@ which initiates which takes a photo of the connected cam and saves it under the 
 crontab -u <*username*> -e
 <br/>
 */5 * * * * <*install_dir*>/timelapse-script/bin/run_timelapse.sh <*timelapse_output_directory*>
+<br/><br/>
+## Rest service
+This is a simple backend application which make the timelapse script manageable
+over the internet via a series of rest api calls.
 
+#### Api
+* /timelapse/snapshot
+    - Calling this method will trigger a snapshot of the camera.
+      The picture is stored on the filesystem and also sent back as the result of the api call.
+* /timelapse/schedule
+    - Configures the crontab entry to run the script on a regular basis.
+* /timelapse/unschedule
+    - Truncates the crontab table.
