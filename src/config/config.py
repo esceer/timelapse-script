@@ -12,6 +12,12 @@ class Config:
     def get_output_directory(self) -> str:
         return self._config['Timelapse']['output-directory']
 
+    def get_resolution_width(self) -> int:
+        return int(self._config['Timelapse']['resolution-width'])
+
+    def get_resolution_height(self) -> int:
+        return int(self._config['Timelapse']['resolution-height'])
+
     def get_schedule_interval_regex(self) -> str:
         return self._config['Schedule']['interval-regex']
 

@@ -22,7 +22,9 @@ def make_wsgi_app(config: Config, cron_tab: CronTab):
 
     @app.get('/timelapse/snapshot')
     def take_picture_handler():
-        with TimelapseEngine(config.get_output_directory()) as timelapse_engine:
+        with TimelapseEngine(config.get_output_directory(),
+                             config.get_resolution_width(),
+                             config.get_resolution_height()) as timelapse_engine:
             directory_path, filename = timelapse_engine.save_image()
             return static_file(filename, root=os.path.abspath(directory_path))
 
