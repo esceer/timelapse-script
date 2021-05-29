@@ -34,3 +34,8 @@ over the internet via a series of rest api calls.
     - Configures the crontab entry to run the script on a regular basis.
 * /timelapse/stop
     - Truncates the crontab table.
+
+## Troubleshoot
+### 1. `/dev/video0` disappears
+Run `sudo modprobe -r uvcvideo && sudo modprobe uvcvideo` before initializing opencv
+and wait a few seconds to let it warm up.
