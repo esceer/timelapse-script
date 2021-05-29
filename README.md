@@ -30,7 +30,7 @@ over the internet via a series of rest api calls.
 * /timelapse/snapshot
     - Calling this method will trigger a snapshot of the camera.
       The picture is stored on the filesystem and also sent back as the result of the api call.
-* /timelapse/schedule
+* /timelapse/start
     - Configures the crontab entry to run the script on a regular basis.
-* /timelapse/unschedule
+* /timelapse/stop
     - Truncates the crontab table.
