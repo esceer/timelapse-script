@@ -18,6 +18,9 @@ class Config:
     def get_resolution_height(self) -> int:
         return int(self._config['Timelapse']['resolution-height'])
 
+    def get_num_of_ramp_frames(self) -> int:
+        return int(self._config['Timelapse']['number-of-ramp-frames'])
+
     def get_schedule_interval_regex(self) -> str:
         return self._config['Schedule']['interval-regex']
 

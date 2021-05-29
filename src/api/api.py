@@ -24,7 +24,8 @@ def make_wsgi_app(config: Config, cron_tab: CronTab):
     def take_picture_handler():
         with TimelapseEngine(config.get_output_directory(),
                              config.get_resolution_width(),
-                             config.get_resolution_height()) as timelapse_engine:
+                             config.get_resolution_height(),
+                             config.get_num_of_ramp_frames()) as timelapse_engine:
             directory_path, filename = timelapse_engine.save_image()
             return static_file(filename, root=os.path.abspath(directory_path))
 
