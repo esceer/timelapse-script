@@ -1,14 +1,11 @@
-import os
-
 import bottle
+import os
 
 from api import api
 from config.config import Config
 from utils.cron_utils import CronTab
 
 app = application = bottle.default_app()
-
-SERVER_PORT = 8090
 
 if __name__ == '__main__':
     config = Config()

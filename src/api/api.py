@@ -29,4 +29,5 @@ def make_wsgi_app(config: Config, cron_tab: CronTab):
             directory_path, filename = timelapse_engine.save_image()
             return static_file(filename, root=os.path.abspath(directory_path))
 
+    schedule_timelapse_handler()
     return app
