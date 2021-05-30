@@ -55,7 +55,7 @@ class TimelapseEngine:
 if __name__ == '__main__':
     import sys
 
-    if len(sys.argv) not in (2, 4, 5):
+    if len(sys.argv) not in (2, 5):
         print('Invalid arguments')
         print()
         print('Usage:')
